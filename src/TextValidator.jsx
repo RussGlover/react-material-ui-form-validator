@@ -16,6 +16,7 @@ export default class TextValidator extends ValidatorComponent {
             helperText,
             validatorListener,
             withRequiredValidator,
+            textFieldRef,
             ...rest
         } = this.props;
         const { isValid } = this.state;
@@ -24,6 +25,7 @@ export default class TextValidator extends ValidatorComponent {
                 {...rest}
                 error={!isValid || error}
                 helperText={(!isValid && this.getErrorMessage()) || helperText}
+                ref={textFieldRef}
             />
         );
     }
